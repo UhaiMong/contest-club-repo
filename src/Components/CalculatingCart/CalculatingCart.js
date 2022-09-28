@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocation } from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
 import '../Body/Body.css';
 import './CalculatingCart.css'
@@ -15,7 +17,7 @@ const CalculatingCart = ({ count }) => {
                 <img className='profile' src="https://raw.githubusercontent.com/UhaiMong/images/master/profile/student-1.png" alt="Profile" />
                 <div className='name-address'>
                     <h4>Markjukerburk</h4>
-                    <span>USA,California</span>
+                    <span> <FontAwesomeIcon icon={faLocation}></FontAwesomeIcon> USA,California</span>
                 </div>
             </div>
 

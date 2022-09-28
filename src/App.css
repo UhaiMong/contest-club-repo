@@ -39,3 +39,21 @@ body{
     transform: rotate(360deg);
   }
 }
+
+
+/* custom */
+
+.btn-question{
+  background-color: crimson;
+  margin-left: 100px;
+  border: none;
+  width: 80px;
+  height: 30px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+.btn-question a{
+  color: white;
+  text-decoration: none;
+
+}
