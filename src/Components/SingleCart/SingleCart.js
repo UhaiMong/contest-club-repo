@@ -1,17 +1,17 @@
 import React from 'react';
 import './SingleCart.css'
 
-const SingleCart = (props) => {
-    const {img_link,title,description,time} = props.information
+const SingleCart = ({ information, clickHandlerToSelect }) => {
+    const { img_link, title, description, time } = information
     return (
         <div className='cart'>
             <div>
                 <img src={img_link} alt="/img" />
                 <h2>{title}</h2>
                 <p>{description}</p>
-                <strong>Time: {time}</strong>
+                <strong>Time: {time} min</strong>
             </div>
-            <button className='btn-select'>Select</button>
+            <button onClick={() => clickHandlerToSelect(information)} className='btn-select'>Select</button>
         </div>
     );
 };
