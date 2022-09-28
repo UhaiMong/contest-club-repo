@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import CalculatingCart from '../CalculatingCart/CalculatingCart';
 import SingleCart from '../SingleCart/SingleCart';
 import './Body.css'
 
@@ -31,33 +32,9 @@ const Body = () => {
             </div>
 
             <div className='calculating-container'>
-                <h3>Add a break time: </h3>
-                <div className='time-container breaker'>
-                    <button>
-                        10s
-                    </button>
+                <CalculatingCart count={count}>
 
-                    <button>
-                        20s
-                    </button>
-
-                    <button>
-                        30s
-                    </button>
-
-                    <button>
-                        40s
-                    </button>
-
-                </div>
-                <h3>Contest Details</h3>
-                <div className='time-container'>
-                    <h4>Time count: {count.length} min</h4>
-                </div>
-
-                <div className='time-container'>
-                    <h4>Time count: {count.length} min</h4>
-                </div>
+                </CalculatingCart>
             </div>
         </div>
     );
