@@ -13,7 +13,7 @@ const Body = () => {
     }, [])
 
     const clickHandlerToSelect = (information) => {
-        console.log(information);
+        // console.log(information);
         const newCount = [...count, information];
         setCount(newCount);
     }
