@@ -11,7 +11,13 @@ const CalculatingCart = ({ count }) => {
     return (
         <div className='cart-inside-part'>
 
-            <img className='profile' src="https://raw.githubusercontent.com/UhaiMong/images/master/profile/student-1.png" alt="Profile" />
+            <div className="profile-section">
+                <img className='profile' src="https://raw.githubusercontent.com/UhaiMong/images/master/profile/student-1.png" alt="Profile" />
+                <div className='name-address'>
+                    <h4>Markjukerburk</h4>
+                    <span>USA,California</span>
+                </div>
+            </div>
 
             <div className='time-container'>
                 <h4>World Rank: 1</h4>
