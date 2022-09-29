@@ -17,6 +17,7 @@ const Body = () => {
         const newCount = [...count, information];
         setCount(newCount);
     }
+    
     return (
         <div className='container'>
             <div className='cart-container'>
@@ -32,9 +33,13 @@ const Body = () => {
             </div>
 
             <div className='calculating-container'>
-                <CalculatingCart count={count}>
+                {
+                    <CalculatingCart
+                        count={count}
+                    >
 
-                </CalculatingCart>
+                    </CalculatingCart>
+                }
             </div>
         </div>
     );

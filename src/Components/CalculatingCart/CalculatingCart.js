@@ -1,15 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocation } from '@fortawesome/free-solid-svg-icons'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Body/Body.css';
 import './CalculatingCart.css'
+import TimeBreaker from '../TimeBreaker/TimeBreaker';
 
-const CalculatingCart = ({ count }) => {
+const CalculatingCart = ({ count}) => {
     // console.log(count);
     let total = 0;
     for (const information of count) {
         total = total + information.time;
     }
+
+    const [timeBreaker, setTimeBreaker] = useState([]);
+    useEffect(() => {
+        fetch('timebreak.json').then(res => res.json()).then(data => setTimeBreaker(data))
+    }, []);
     return (
         <div className='cart-inside-part'>
 
@@ -27,21 +33,14 @@ const CalculatingCart = ({ count }) => {
 
             <h3>Add a break time: </h3>
             <div className='time-container breaker'>
-                <button>
-                    10s
-                </button>
+                {
+                    timeBreaker.map(times => <TimeBreaker
+                        key={times.id}
+                        timebreak={times}
+                    >
 
-                <button>
-                    20s
-                </button>
-
-                <button>
-                    30s
-                </button>
-
-                <button>
-                    40s
-                </button>
+                    </TimeBreaker>)
+                }
 
             </div>
             <h3>Contest Details</h3>
