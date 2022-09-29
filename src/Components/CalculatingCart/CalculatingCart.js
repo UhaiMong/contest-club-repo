@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import '../Body/Body.css';
 import './CalculatingCart.css'
 import TimeBreaker from '../TimeBreaker/TimeBreaker';
+import Toast from '../Toast/Toast';
 
 const CalculatingCart = ({ count}) => {
     // console.log(count);
@@ -13,9 +14,16 @@ const CalculatingCart = ({ count}) => {
     }
 
     const [timeBreaker, setTimeBreaker] = useState([]);
+
+    const [breakTime,setBreakTime] = useState([])
     useEffect(() => {
         fetch('timebreak.json').then(res => res.json()).then(data => setTimeBreaker(data))
-    }, []);
+    }, [])
+
+    const clickHandlerToAddBreakTime = (timebreak) => {
+        const newBreak = [...breakTime, timebreak];
+        setBreakTime(newBreak);
+    }
     return (
         <div className='cart-inside-part'>
 
@@ -37,6 +45,7 @@ const CalculatingCart = ({ count}) => {
                     timeBreaker.map(times => <TimeBreaker
                         key={times.id}
                         timebreak={times}
+                        clickHandlerToAddBreakTime ={clickHandlerToAddBreakTime}
                     >
 
                     </TimeBreaker>)
@@ -52,7 +61,9 @@ const CalculatingCart = ({ count}) => {
                 <h4>Break Time: {count.length} min</h4>
             </div>
 
-            <button className='btn-check'>Check your Rank!</button>
+            {/* <button className='btn-check'>Check your Rank!</button> */}
+
+            <Toast></Toast>
         </div>
     );
 };

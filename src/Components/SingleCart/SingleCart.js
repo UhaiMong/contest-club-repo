@@ -2,6 +2,7 @@ import React from 'react';
 import './SingleCart.css'
 
 const SingleCart = ({ information, clickHandlerToSelect }) => {
+    // console.log(information);
     const { img_link, title, description, time } = information
     return (
         <div className='cart'>

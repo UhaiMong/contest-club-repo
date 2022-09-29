@@ -1,24 +1,20 @@
 import React from 'react';
 
-import { toast } from 'react-toastify';
-
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-toast.configure()
+const notify = () => {
+    toast("You are the highest rank in the world!!");
+}
 
-function GeeksforGeeks() {
+function Toast() {
 
-    const notify = () => {
-
-        toast('Hello Geeks')
-    }
     return (
-        <div className="GeeksforGeeks">
-            {
-
-            }
+        <div>
+            <button className='btn-check' onClick={notify}>Check your Rank!!</button>
+            <ToastContainer />
         </div>
     );
 }
 
-export default GeeksforGeeks;
+export default Toast;
