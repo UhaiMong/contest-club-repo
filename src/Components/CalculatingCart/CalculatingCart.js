@@ -20,10 +20,14 @@ const CalculatingCart = ({ count}) => {
         fetch('timebreak.json').then(res => res.json()).then(data => setTimeBreaker(data))
     }, [])
 
+    let breaktime = 0;
     const clickHandlerToAddBreakTime = (timebreak) => {
         const newBreak = [...breakTime, timebreak];
         setBreakTime(newBreak);
+        // console.log(newBreak);
     }
+
+
     return (
         <div className='cart-inside-part'>
 
@@ -42,9 +46,9 @@ const CalculatingCart = ({ count}) => {
             <h3>Add a break time: </h3>
             <div className='time-container breaker'>
                 {
-                    timeBreaker.map(times => <TimeBreaker
-                        key={times.id}
-                        timebreak={times}
+                    timeBreaker.map(timebreak => <TimeBreaker
+                        key={timebreak.id}
+                        timebreak={timebreak}
                         clickHandlerToAddBreakTime ={clickHandlerToAddBreakTime}
                     >
 
@@ -58,10 +62,10 @@ const CalculatingCart = ({ count}) => {
             </div>
 
             <div className='time-container'>
-                <h4>Break Time: {count.length} min</h4>
+                <h4>Break Time: {breaktime}</h4>
             </div>
 
-            {/* <button className='btn-check'>Check your Rank!</button> */}
+            {/* Toastify */}
 
             <Toast></Toast>
         </div>
